@@ -1,0 +1,1 @@
+# stoplight_fatora_payment_gateway
