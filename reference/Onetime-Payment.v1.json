@@ -126,31 +126,23 @@
           },
           "currencyCode": {
             "type": "string"
-          },
-          "orderId": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "int"
-          },
-          "customerEmail": {
-            "type": "string"
-          },
-           "customerName": {
-            "type": "string"
-          },
-          "customerPhone": {
-            "type": "string"
-          },
-          "customerCountry": {
-            "type": "string"
-          },
-           "lang": {
-            "type": "string"
-          },
-           "note": {
-            "type": "string"
-          },
+          }
+        }
+      }
+    },
+    "responses": {
+      "result": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "result": {
+                  "type": "string"
+                }
+              }
+            }
+          }
         }
       }
     }
