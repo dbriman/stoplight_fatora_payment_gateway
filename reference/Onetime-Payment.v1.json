@@ -1,0 +1,134 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Onetime Payment",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://maktapp.credit"
+    }
+  ],
+  "paths": {
+    "/v3/AddTransaction": {
+      "post": {
+        "summary": "Add onetime payment",
+        "operationId": "add-transaction",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParamPayment"
+                },
+                "examples": {
+                  "New User Bob Fellow": {
+                    "value": {
+                      "id": 12,
+                      "firstName": "Bob",
+                      "lastName": "Fellow",
+                      "email": "bob.fellow@gmail.com",
+                      "dateOfBirth": "1996-08-24",
+                      "emailVerified": false,
+                      "createDate": "2020-11-18"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  },
+                  "FcmToken": {
+                    "type": "string"
+                  },
+                  "currencyCode": {
+                    "type": "string"
+                  },
+                  "orderId": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "string"
+                  },
+                  "customerEmail": {
+                    "type": "string"
+                  },
+                  "customerName": {
+                    "type": "string"
+                  },
+                  "customerPhone": {
+                    "type": "string"
+                  },
+                  "customerCountry": {
+                    "type": "string"
+                  },
+                  "lang": {
+                    "type": "string"
+                  },
+                  "note": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "Create User Bob Fellow": {
+                  "value": {
+                    "firstName": "Bob",
+                    "lastName": "Fellow",
+                    "email": "bob.fellow@gmail.com",
+                    "dateOfBirth": "1996-08-24"
+                  }
+                }
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  },
+                  "": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Post the necessary fields for the API to create a add transaction."
+        },
+        "description": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page.\n\n"
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {
+      "ParamPayment": {
+        "title": "ParamPayment",
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          },
+          "FcmToken": {
+            "type": "string"
+          },
+          "currencyCode": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
