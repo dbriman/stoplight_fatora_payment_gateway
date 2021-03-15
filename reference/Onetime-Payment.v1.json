@@ -126,7 +126,31 @@
           },
           "currencyCode": {
             "type": "string"
-          }
+          },
+          "orderId": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "int"
+          },
+          "customerEmail": {
+            "type": "string"
+          },
+           "customerName": {
+            "type": "string"
+          },
+          "customerPhone": {
+            "type": "string"
+          },
+          "customerCountry": {
+            "type": "string"
+          },
+           "lang": {
+            "type": "string"
+          },
+           "note": {
+            "type": "string"
+          },
         }
       }
     }
