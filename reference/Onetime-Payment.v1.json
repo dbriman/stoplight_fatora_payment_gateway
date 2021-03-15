@@ -145,6 +145,22 @@
           }
         }
       }
+    },
+    "examples": {
+      "example_addTransaction": {
+        "value": {
+          "description": "Example shared example",
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "token"
+          ]
+        }
+      }
     }
   }
 }
