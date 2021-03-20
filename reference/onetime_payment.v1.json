@@ -5,11 +5,10 @@
     "version": "1.0",
     "license": {
       "name": "License (MIT, Apache 20,etc)",
-      "url" : "https://fatora.io"
+      "url": "https://fatora.io"
     },
-    "contact" :{
-    },
-    "description" : "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page."
+    "contact": {},
+    "description": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page."
   },
   "servers": [
     {
@@ -18,8 +17,8 @@
   ],
   "paths": {
     "/payments/onetime_payment": {
-      "post": {
-
+       "post": {    
+        "tags" : ["fatora.io", "paymentgateway"],
         "summary": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page.",
         "operationId": "post-onetime_payment",
         "responses": {
@@ -63,34 +62,77 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "firstName": {
-                    "type": "string"
-                  },
-                  "lastName": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "dateOfBirth": {
-                    "type": "string",
-                    "format": "date"
-                  }
-                },
-                "required": [
-                  "firstName",
-                  "lastName",
-                  "email",
-                  "dateOfBirth"
+                      "token": {
+                        "type": "string",
+                        "example": "E4B73FEE-F492-4607-A38D-852B0EBC91C9",
+                        "description": "API token."
+                      },
+                      "FcmToken": {
+                        "type": "string",
+                        "description": "Mobile FCM Token"
+                      },
+          "currencyCode": {
+            "type": "string",
+            "example": "QAR",
+            "description": "currency code of your country as an ISO 4217 alpha code.The default code is QAR.If you want to support more than one currency, contact with Maktapp support."
+          },
+          "orderId": {
+            "type": "string",
+            "example": "123456"
+          },
+          "amount": {
+            "type": "integer",
+            "example": 100
+          },
+          "customerEmail": {
+            "type": "string",
+            "format": "email",
+            "example": "briman.dania@gmail.com"
+          },
+          "customerName": {
+            "type": "string",
+            "example": "dania.briman"
+          },
+          "customerPhone": {
+            "type": "string",
+            "example": "0944267561",
+            "description": ""
+          },
+          "customerCountry": {
+            "type": "string",
+            "example": "qatar",
+            "description": ""
+          },
+          "lang": {
+            "type": "string",
+            "example": "en",
+            "description": ""
+          },
+          "note": {
+            "type": "string",
+            "description": ""
+          }
+        },
+                 "required": [
+                  "token",
+                  "orderId",
+                  "amount"
                 ]
               },
               "examples": {
-                "Create User Bob Fellow": {
+                "Add onetime payment": {
                   "value": {
-                    "firstName": "Bob",
-                    "lastName": "Fellow",
-                    "email": "bob.fellow@gmail.com",
-                    "dateOfBirth": "1996-08-24"
+                    "token": "E4B73FEE-F492-4607-A38D-852B0EBC91C9",
+                    "FcmToken": "",
+                    "currencyCode": "QAR",
+                    "orderId": "123456",
+                    "amount": 100,
+                    "customerEmail": "briman.dania@gmail.com",
+                    "customerName": "dbriman",
+                    "customerPhone": "0944267561",
+                    "customerCountry": "qatar",
+                    "lang": "ar",
+                    "note": ""
                   }
                 }
               }
@@ -182,5 +224,13 @@
         ]
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "fatora.io"
+    },
+    {
+      "name": "paymentgateway"
+    }
+  ]
 }
