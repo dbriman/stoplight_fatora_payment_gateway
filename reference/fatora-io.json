@@ -138,7 +138,6 @@
       "name": "paymentgateway"
     }
   ],
-  "basePath": "/payments/onetime_payment",
   "produces": [
     "application/json"
   ],
