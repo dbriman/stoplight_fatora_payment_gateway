@@ -22,113 +22,34 @@
   "paths": {
     "/payments/onetime_payment": {
       "post": {
+        "summary": "/payments/onetime_payment",
         "tags": [
-          "Fatora.io", "paymentgateway"
-        ],
-        "description": "Fatora gateway provides robust features for processing online payments, it processes payments securely and conveniently in real time.",
-        "summary": "CreateOnetimePayment",
-        "operationId": "Payment_CreateOnetimePayment",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml",
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml"
-        ],
-        "parameters": [
-          {
-            "name": "apiPayment",
-            "in": "body",
-            "description": "",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/OnetimePayment"
-            }
-          }
+          "Fatora.io"
         ],
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "result": {
+                  "type": "integer"
+                },
+                "msg": {
+                  "type": "string"
+                }
+              }
             }
           }
-        }
+        },
+        "operationId": "post-payments-onetime_payment",
+        "description": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page."
       }
     }
-  },
-  "definitions": {
-    "OnetimePayment": {
-      "description": "OnetimePayment",
-      "type": "object",
-      "properties": {
-        "token": {
-          "type": "string",
-          "example": "E4B73FEE-F492-4607-A38D-852B0EBC91C9"
-        },
-        "FcmToken": {
-          "type": "string"
-        },
-        "currencyCode": {
-          "type": "string",
-          "example": "QAR"
-        },
-        "orderId": {
-          "type": "string",
-          "example": "123456"
-        },
-        "amount": {
-          "type": "string",
-          "example": "100"
-        },
-        "customerName": {
-          "type": "string",
-          "example": "dbriman"
-        },
-        "customerEmail": {
-          "type": "string",
-          "example": "briman@gmail.com"
-        },
-        "customerCountry": {
-          "type": "string",
-          "example": "qatar"
-        },
-        "lang": {
-          "type": "string",
-          "example": "en"
-        },
-        "note": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "token",
-        "currencyCode",
-        "orderId",
-        "amount"
-      ],
-      "x-examples": {
-        "example-1": {
-          "token": "E4B73FEE-F492-4607-A38D-852B0EBC91C9",
-          "FcmToken": "string",
-          "currencyCode": "QAR",
-          "orderId": "123456",
-          "amount": "100",
-          "customerName": "dbriman",
-          "customerEmail": "briman@gmail.com",
-          "customerCountry": "qatar",
-          "lang": "en",
-          "note": "string"
-        }
-      }
-    }
-  },
+  },  
   "securityDefinitions": {},
   "tags": [
     {
