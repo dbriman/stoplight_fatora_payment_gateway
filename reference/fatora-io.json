@@ -49,7 +49,7 @@
         "description": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page."
       }
     }
-  },  
+  },
   "securityDefinitions": {},
   "tags": [
     {
@@ -64,5 +64,43 @@
   ],
   "consumes": [
     "application/json"
-  ]
+  ],
+  "definitions": {
+    "OnetimePayment": {
+      "title": "OnetimePayment",
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "FcmToken": {
+          "type": "string"
+        },
+        "currencyCode": {
+          "type": "string"
+        },
+        "orderId": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "integer"
+        },
+        "customerName": {
+          "type": "string"
+        },
+        "customerEmail": {
+          "type": "string"
+        },
+        "customerCountry": {
+          "type": "string"
+        },
+         "lang": {
+          "type": "string"
+        },
+         "note": {
+          "type": "string"
+        }
+    }
+    }
+  }
 }
