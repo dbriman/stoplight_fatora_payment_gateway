@@ -17,8 +17,11 @@
   ],
   "paths": {
     "/payments/onetime_payment": {
-       "post": {    
-        "tags" : ["fatora.io", "paymentgateway"],
+      "post": {
+        "tags": [
+          "fatora.io",
+          "paymentgateway"
+        ],
         "summary": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page.",
         "operationId": "post-onetime_payment",
         "responses": {
@@ -62,58 +65,58 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                      "token": {
-                        "type": "string",
-                        "example": "E4B73FEE-F492-4607-A38D-852B0EBC91C9",
-                        "description": "API token."
-                      },
-                      "FcmToken": {
-                        "type": "string",
-                        "description": "Mobile FCM Token"
-                      },
-          "currencyCode": {
-            "type": "string",
-            "example": "QAR",
-            "description": "currency code of your country as an ISO 4217 alpha code.The default code is QAR.If you want to support more than one currency, contact with Maktapp support."
-          },
-          "orderId": {
-            "type": "string",
-            "example": "123456"
-          },
-          "amount": {
-            "type": "integer",
-            "example": 100
-          },
-          "customerEmail": {
-            "type": "string",
-            "format": "email",
-            "example": "briman.dania@gmail.com"
-          },
-          "customerName": {
-            "type": "string",
-            "example": "dania.briman"
-          },
-          "customerPhone": {
-            "type": "string",
-            "example": "0944267561",
-            "description": ""
-          },
-          "customerCountry": {
-            "type": "string",
-            "example": "qatar",
-            "description": ""
-          },
-          "lang": {
-            "type": "string",
-            "example": "en",
-            "description": ""
-          },
-          "note": {
-            "type": "string",
-            "description": ""
-          }
-        },
-                 "required": [
+                  "token": {
+                    "type": "string",
+                    "example": "E4B73FEE-F492-4607-A38D-852B0EBC91C9",
+                    "description": "API token."
+                  },
+                  "FcmToken": {
+                    "type": "string",
+                    "description": "Mobile FCM Token"
+                  },
+                  "currencyCode": {
+                    "type": "string",
+                    "example": "QAR",
+                    "description": "currency code of your country as an ISO 4217 alpha code.The default code is QAR.If you want to support more than one currency, contact with Maktapp support."
+                  },
+                  "orderId": {
+                    "type": "string",
+                    "example": "123456"
+                  },
+                  "amount": {
+                    "type": "integer",
+                    "example": 100
+                  },
+                  "customerEmail": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "briman.dania@gmail.com"
+                  },
+                  "customerName": {
+                    "type": "string",
+                    "example": "dania.briman"
+                  },
+                  "customerPhone": {
+                    "type": "string",
+                    "example": "0944267561",
+                    "description": ""
+                  },
+                  "customerCountry": {
+                    "type": "string",
+                    "example": "qatar",
+                    "description": ""
+                  },
+                  "lang": {
+                    "type": "string",
+                    "example": "en",
+                    "description": ""
+                  },
+                  "note": {
+                    "type": "string",
+                    "description": ""
+                  }
+                },
+                "required": [
                   "token",
                   "orderId",
                   "amount"
@@ -138,9 +141,9 @@
               }
             }
           },
-          "description": "Post the necessary fields for the API to create a new user."
+          "description": "Post the necessary fields for the API to create a new payment."
         },
-        "description": "Create a new user."
+        "description": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page."
       }
     }
   },
