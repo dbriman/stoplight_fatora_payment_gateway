@@ -1,11 +1,11 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "onetime_payment",
+    "title": "Payments API",
     "version": "1.0",
     "license": {
       "name": "License (MIT, Apache 20,etc)",
-      "url": "https://fatora.io"
+      "url": "https://fatora.io/api"
     },
     "contact": {},
     "description": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page."
