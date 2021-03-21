@@ -1,5 +1,3 @@
-#Payment
-
 ## Onetime Payment
 
 ```php
