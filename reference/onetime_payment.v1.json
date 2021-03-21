@@ -229,10 +229,7 @@
   },
   "tags": [
     {
-      "name": "fatora.io"
-    },
-    {
-      "name": "paymentgateway"
-    }
+      "name": "onetime payment"
+    }   
   ]
 }
