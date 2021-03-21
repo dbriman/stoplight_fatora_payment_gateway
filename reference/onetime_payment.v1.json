@@ -141,7 +141,7 @@
         },
         "description": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page.",
         "tags": [
-          "onetime payment"
+          "Payments Embed API V1"
         ]
       }
     }
@@ -229,7 +229,7 @@
   },
   "tags": [
     {
-      "name": "onetime payment"
-    }   
+      "name": "Payments Embed API V1"
+    }
   ]
 }
