@@ -19,7 +19,6 @@
     "/payments/onetime_payment": {
       "post": {
         "tags": [
-          "fatora.io",
           "paymentgateway"
         ],
         "summary": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page.",
