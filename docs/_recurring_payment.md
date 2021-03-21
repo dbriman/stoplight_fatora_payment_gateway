@@ -1,5 +1,36 @@
 ##  Recurring Payment
 
+This API allows the merchant application to initialize a recurring payment and get the URL of checkout page.<br/>
+ 
+### HTTP Request
+
+`POST https://maktapp.credit/v3/AddTransaction`
+
+### Request Parameters
+
+| Parameter   |	Restriction	| Description                                          |
+|-------------------|----------------------|----------------------------------------------|
+| token     		| Required |String value.<br/>API token. |
+| FcmToken          | Optional |String value.<br/>Mobile FCM Token. |
+| currencyCode      | Optional |String value.<br/>currency code of your country as an ISO 4217 alpha code. <br/> The default code is QAR. <br/> If you want to support more thant one currency, contact with Maktapp support.|
+| orderId    		| Required |String value.<br/>A unique identifier for each payment in your application.|
+| amount            | Required |Decimal value.<br/>Payment amount that will be deducted from the client's account.|
+| customerEmail     | Required |String value, it should have valid email address format.<br/>Clients email address.|
+| isRecurring       | Optional |Boolean value.<br/>To indicate the payment is recurring or not.|
+| customerName      | Optional |String value.<br/>Clients Name.|
+| customerPhone     | Optional |String value.<br/>Clients phone, including country code.|
+| customerCountry   | Optional |String value.<br/>Clients country.|
+| lang  		    | Optional |String value, it should have one of these value{"en","ar"}.<br/>Language of checkout page..<br/>Default value is "ar".|
+| note  			| Optional |String value.<br/>Notes about the payment.|
+
+If all the required parameter are valid, Fatora gateway will return URL of checkout page in a JSON format, like following:
+### Response JSON 
+{ "result": "https://maktapp.credit/pay/MCPaymentPage?paymentID=XXXXXXXXXX" }
+
+If the value of one parameter are not valid, Fatora gateway will return a response in JSON format containing error code, like following:
+### Response JSON 
+{ "result": x } [-1, -2, -3, -6, -8, -10, -20, -21 ] 
+
 ```php
 <? php
 init();
@@ -150,40 +181,6 @@ function pay() {
 	"result": x
 }  [-1, -2, -3, -6, -8, -10, -20, -21 ]
 ```
-This API allows the merchant application to initialize a recurring payment and get the URL of checkout page.<br/>
-
- 
-### HTTP Request
-
-`POST https://maktapp.credit/v3/AddTransaction`
-
-### Request Parameters
-
-| Parameter   |	Restriction	| Description                                          |
-|-------------------|----------------------|----------------------------------------------|
-| token     		| Required |String value.<br/>API token. |
-| FcmToken          | Optional |String value.<br/>Mobile FCM Token. |
-| currencyCode      | Optional |String value.<br/>currency code of your country as an ISO 4217 alpha code. <br/> The default code is QAR. <br/> If you want to support more thant one currency, contact with Maktapp support.|
-| orderId    		| Required |String value.<br/>A unique identifier for each payment in your application.|
-| amount            | Required |Decimal value.<br/>Payment amount that will be deducted from the client's account.|
-| customerEmail     | Required |String value, it should have valid email address format.<br/>Clients email address.|
-| isRecurring       | Optional |Boolean value.<br/>To indicate the payment is recurring or not.|
-| customerName      | Optional |String value.<br/>Clients Name.|
-| customerPhone     | Optional |String value.<br/>Clients phone, including country code.|
-| customerCountry   | Optional |String value.<br/>Clients country.|
-| lang  		    | Optional |String value, it should have one of these value{"en","ar"}.<br/>Language of checkout page..<br/>Default value is "ar".|
-| note  			| Optional |String value.<br/>Notes about the payment.|
-
-If all the required parameter are valid, Fatora gateway will return URL of checkout page in a JSON format, like following:
-### Response JSON 
-{ "result": "https://maktapp.credit/pay/MCPaymentPage?paymentID=XXXXXXXXXX" }
-
-If the value of one parameter are not valid, Fatora gateway will return a response in JSON format containing error code, like following:
-### Response JSON 
-{ "result": x } [-1, -2, -3, -6, -8, -10, -20, -21 ] 
-
-
-
 
 After getting URL of checkout page, the merchant application should redirect the client to this page, when the client enters his card data in checkout page and clicks on pay button, Fatora gateway will process payment and redirects the client to success or failure page in the merchant application. <br/>
 
