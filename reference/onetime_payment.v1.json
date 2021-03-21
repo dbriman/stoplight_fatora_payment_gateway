@@ -18,9 +18,6 @@
   "paths": {
     "/payments/onetime_payment": {
       "post": {
-        "tags": [
-          "paymentgateway"
-        ],
         "summary": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page.",
         "operationId": "post-onetime_payment",
         "responses": {
@@ -142,7 +139,10 @@
           },
           "description": "Post the necessary fields for the API to create a new payment."
         },
-        "description": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page."
+        "description": "This API allows the merchant application to initialize a onetime payment and get the URL of checkout page.",
+        "tags": [
+          "onetime payment"
+        ]
       }
     }
   },
